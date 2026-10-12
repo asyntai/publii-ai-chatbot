@@ -1,0 +1,48 @@
+{
+    "name": "Asyntai AI Chatbot",
+    "description": "Adds the Asyntai AI chatbot to your site. It reads your pages and answers visitor questions 24/7.",
+    "license": "GPL-3.0",
+    "author": "Asyntai - asyntai.com",
+    "version": "1.0.0",
+    "scope": "site",
+    "minimumPubliiVersion": "0.40.0",
+    "usePluginSettingsView": false,
+    "messageInOptions": {
+        "type": "info",
+        "text": "Create a free account on <a href='https://asyntai.com/auth/' target='_blank' rel='noopener noreferrer'>asyntai.com</a>, then copy your embed code from the <a href='https://asyntai.com/dashboard#setup' target='_blank' rel='noopener noreferrer'>Asyntai dashboard</a> and paste it below. Change the chatbot's look, answers and language in the dashboard."
+    },
+    "config": [
+        {
+            "name": "widgetId",
+            "label": "Embed code or widget ID",
+            "note": "Paste the whole embed code from your Asyntai dashboard, or only the widget ID. The plugin finds the ID in the code.",
+            "group": "Chatbot",
+            "type": "textarea",
+            "rows": 4,
+            "value": ""
+        },
+        {
+            "name": "cookieBannerIntegration",
+            "label": "Load the chatbot only after cookie consent",
+            "note": "Uses Publii's built-in Cookie Banner. The chatbot loads only after the visitor accepts the Cookie Group below.",
+            "group": "Cookie Banner integration",
+            "type": "checkbox",
+            "value": false
+        },
+        {
+            "name": "cookieBannerGroup",
+            "label": "Cookie Group ID",
+            "note": "The Cookie Group ID from Site Settings > Privacy (GDPR) > Cookie Banner, for example: functional",
+            "group": "Cookie Banner integration",
+            "placeholder": "functional",
+            "type": "text",
+            "value": "",
+            "dependencies": [
+                {
+                    "field": "cookieBannerIntegration",
+                    "value": true
+                }
+            ]
+        }
+    ]
+}
